@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الحلويات اللذيذة</title>
+    <!-- ربط ملف الـ CSS الخارجي حسب الهيكل المطلوب -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- أولاً: شريط التنقل ورأس الصفحة -->
+    <header>
+        <div class="logo">
+            <h1>🍬 متجر الحلوى</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#cart">سلة المشتريات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ثانياً: المحتوى الرئيسي للمتجر -->
+    <main>
+        <!-- قسم ترحيبي -->
+        <section class="hero">
+            <h2>أهلاً بك في عالم السعادة والحلويات! ✨</h2>
+            <p>اختر حلوياتك المفضلة وسنقوم بتجهيزها لك فوراً.</p>
+        </section>
+
+        <!-- قسم المنتجات -->
+        <section id="products" class="products-section">
+            <h2>قائمة الحلويات 🍫</h2>
+            <div class="products-container">
+                
+                <!-- المنتج الأول -->
+                <div class="product-card">
+                    <img src="images/cupcake.jpg" alt="كب كيك فراولة">
+                    <h3>كب كيك فراولة</h3>
+                    <p class="price">15 ريال</p>
+                    <button class="add-to-cart-btn" data-name="كب كيك فراولة" data-price="15">إضافة للسلة 🛒</button>
+                </div>
+
+                <!-- المنتج الثاني -->
+                <div class="product-card">
+                    <img src="images/donut.jpg" alt="دونات الشوكولاتة">
+                    <h3>دونات الشوكولاتة</h3>
+                    <p class="price">10 ريال</p>
+                    <button class="add-to-cart-btn" data-name="دونات الشوكولاتة" data-price="10">إضافة للسلة 🛒</button>
+                </div>
+
+                <!-- المنتج الثالث -->
+                <div class="product-card">
+                    <img src="images/cookies.jpg" alt="كوكيز بقطع الشوكولاتة">
+                    <h3>كوكيز كلاسيك</h3>
+                    <p class="price">12 ريال</p>
+                    <button class="add-to-cart-btn" data-name="كوكيز كلاسيك" data-price="12">إضافة للسلة 🛒</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ثالثاً: قسم سلة المشتريات -->
+        <section id="cart" class="cart-section">
+            <h2>سلة المشتريات 🛒</h2>
+            <div class="cart-container">
+                <ul id="cart-items">
+                    <p class="empty-message">السلة فارغة حالياً.</p>
+                </ul>
+                <div class="cart-total">
+                    <h3>المجموع الكلي: <span id="total-price">0</span> ريال</h3>
+                </div>
+                <button id="checkout-btn">تأكيد الطلب ✅</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- رابعاً: تذييل الصفحة -->
+    <footer>
+        <p>جميع الحقوق محفوظة © متجر الحلويات 2026</p>
+    </footer>
+
+    <!-- ربط ملف الـ JavaScript الخارجي حسب الهيكل المطلوب -->
+    <script src="js/main.js"></script>
+</body>
+</html>
