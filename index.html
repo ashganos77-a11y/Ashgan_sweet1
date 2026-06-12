@@ -3,86 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الحلويات اللذيذة</title>
-    <!-- ربط ملف الـ CSS الخارجي -->
+    <title>متجر الحلويات اللذيذة - Sweet Delight Shop</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🍬 متجر الحلويات</h1>
+                    <p class="tagline">Sweet Delight Shop</p>
+                </div>
+                
+                <!-- Hamburger Menu -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
-    <!-- أولاً: شريط التنقل ورأس الصفحة -->
-    <header>
-        <div class="logo">
-            <h1>🍬 متجر الحلوى</h1>
+                <!-- Navigation -->
+                <nav class="nav" id="nav">
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#about">عن المتجر</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="themeToggle" title="تغيير الوضع">🌙</button>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#products">المنتجات</a></li>
-                <li><a href="#cart">سلة المشتريات</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <!-- ثانياً: المحتوى الرئيسي للمتجر -->
+    <!-- ===== MAIN CONTENT ===== -->
     <main>
-        <!-- قسم ترحيبي -->
-        <section class="hero">
-            <h2>أهلاً بك في عالم السعادة والحلويات! ✨</h2>
-            <p>اختر حلوياتك المفضلة وسنقوم بتجهيزها لك فوراً.</p>
-        </section>
-
-        <!-- قسم المنتجات -->
-        <section id="products" class="products-section">
-            <h2>قائمة الحلويات 🍫</h2>
-            <div class="products-container">
-                
-                <!-- المنتج الأول -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=200&fit=crop" alt="كب كيك فراولة">
-                    <h3>كب كيك فراولة</h3>
-                    <p class="price">15 ريال</p>
-                    <button class="add-to-cart-btn" data-name="كب كيك فراولة" data-price="15">إضافة للسلة 🛒</button>
-                </div>
-
-                <!-- المنتج الثاني -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1639599810694-08e5bbc87dc3?w=300&h=200&fit=crop" alt="دونات الشوكولاتة">
-                    <h3>دونات الشوكولاتة</h3>
-                    <p class="price">10 ريال</p>
-                    <button class="add-to-cart-btn" data-name="دونات الشوكولاتة" data-price="10">إضافة للسلة 🛒</button>
-                </div>
-
-                <!-- المنتج الثالث -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=300&h=200&fit=crop" alt="كوكيز بقطع الشوكولاتة">
-                    <h3>كوكيز كلاسيك</h3>
-                    <p class="price">12 ريال</p>
-                    <button class="add-to-cart-btn" data-name="كوكيز كلاسيك" data-price="12">إضافة للسلة 🛒</button>
-                </div>
-
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>أهلاً بك في عالم السعادة والحلويات! 🎉</h2>
+                <p>اكتشف أشهى أنواع الحلويات المصنوعة بحب وجودة عالية</p>
+                <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                    تصفح المنتجات
+                </button>
             </div>
         </section>
 
-        <!-- ثالثاً: قسم سلة المشتريات -->
-        <section id="cart" class="cart-section">
-            <h2>سلة المشتريات 🛒</h2>
-            <div class="cart-container">
-                <ul id="cart-items">
-                    <p class="empty-message">السلة فارغة حالياً.</p>
-                </ul>
-                <div class="cart-total">
-                    <h3>المجموع الكلي: <span id="total-price">0</span> ريال</h3>
+        <!-- SEARCH & FILTER SECTION -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="🔍 ابحث عن حلوياتك المفضلة..."
+                        class="search-input"
+                    >
                 </div>
-                <button id="checkout-btn">تأكيد الطلب ✅</button>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">جميع المنتجات</button>
+                    <button class="filter-btn" data-filter="cakes">الكيك والكب كيك</button>
+                    <button class="filter-btn" data-filter="cookies">البسكويت والدونات</button>
+                    <button class="filter-btn" data-filter="traditional">الحلويات التقليدية</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2 class="section-title">قائمة الحلويات المتنوعة 🍰</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CART SUMMARY SECTION -->
+        <section class="cart-summary">
+            <div class="container">
+                <div class="cart-info">
+                    <span class="cart-count">🛒 عدد المنتجات: <strong id="cartCount">0</strong></span>
+                    <span class="cart-total">💰 الإجمالي: <strong id="cartTotal">0</strong> ريال</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOPPING CART SECTION -->
+        <section id="cart" class="cart-section">
+            <div class="container">
+                <h2 class="section-title">🛒 سلة المشتريات</h2>
+                <div class="cart-container">
+                    <div id="cartItems" class="cart-items">
+                        <p class="empty-message">السلة فارغة حالياً. ابدأ بإضافة المنتجات!</p>
+                    </div>
+                    <div class="cart-summary-box">
+                        <h3>ملخص الطلب</h3>
+                        <div class="summary-item">
+                            <span>المجموع:</span>
+                            <span id="summaryTotal">0 ريال</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>الضريبة (15%):</span>
+                            <span id="summaryTax">0 ريال</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>الإجمالي النهائي:</span>
+                            <span id="summaryGrandTotal">0 ريال</span>
+                        </div>
+                        <button class="btn btn-success" id="checkoutBtn">تأكيد الطلب ✅</button>
+                        <button class="btn btn-secondary" id="continueShopping">متابعة التسوق</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">عن متجرنا 📖</h2>
+                <div class="about-content">
+                    <p>متجر الحلويات اللذيذة متخصص في تقديم أفضل أنواع الحلويات الطازة والمصنوعة بعناية فائقة. نحن نؤمن بجودة المكونات والحب في كل حلوى نصنعها.</p>
+                    <p>مع خبرة تزيد عن 10 سنوات في مجال صناعة الحلويات، نقدم لك أشهى الأطباق بأسعار منافسة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">اتصل بنا 📞</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">الاسم:</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني:</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">الرسالة:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- رابعاً: تذييل الصفحة -->
-    <footer>
-        <p>جميع الحقوق محفوظة © متجر الحلويات 2026</p>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 متجر الحلويات اللذيذة - جميع الحقوق محفوظة</p>
+            <p>صنع بـ ❤️ بواسطة أشجان</p>
+        </div>
     </footer>
 
-    <!-- ربط ملف الـ JavaScript الخارجي -->
+    <!-- Scripts -->
     <script src="./js/main.js"></script>
 </body>
 </html>
